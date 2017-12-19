@@ -9,13 +9,13 @@
   },
   "browser_action": {
     "default_icon": "icon-16.png",
+    "default_popup": "popup.html",
     "default_title" : "Give up FB"
   },
   "background": {
-    "persistent": false,
     "scripts": ["background.js"]
   },
   "permissions": [
-    "tabs", "activeTab", "http://*/*", "https://*/*"
+    "tabs", "webRequest", "webRequestBlocking","http://*/*", "https://*/*"
   ]
 }

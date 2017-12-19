@@ -1,11 +1,49 @@
 <!doctype html>
 <html>
   <head>
-    <title>GTmetrix Analyzer</title>
+    <title>Give up Facebook</title>
+        <link rel="stylesheet" href="include/ui-1.10.0/ui-lightness/jquery-ui-1.10.0.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="jquery.ui.timepicker.css?v=0.3.3" type="text/css" />
+
+    <script type="text/javascript" src="include/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="include/ui-1.10.0/jquery.ui.core.min.js"></script>
+    <script type="text/javascript" src="include/ui-1.10.0/jquery.ui.widget.min.js"></script>
+    <script type="text/javascript" src="include/ui-1.10.0/jquery.ui.tabs.min.js"></script>
+    <script type="text/javascript" src="include/ui-1.10.0/jquery.ui.position.min.js"></script>
+
+    <script type="text/javascript" src="jquery.ui.timepicker.js?v=0.3.3"></script>
+    <style>
+      body {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #form {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+      }
+    </style>
     <script src="popup.js"></script>
   </head>
   <body>
-    <h1>GTmetrix Analyzer</h1>
-    <button id="checkPage">Check this page now!</button>
+    <h2>Give up Facebook</h2>
+    <h1>Try your best!</h1>
+    <h3>I do not want to access Facebook</h3>
+    <div id="form">
+      <div>
+        <label>From:</label>
+        <input type="text" id="start"/>
+      </div>
+      <br />
+      <div>
+        <label>To:</label>
+        <input type="text" id="end"/>
+      </div>
+  </div>
+    <br/>
+    <br/>
+    <button id="save">Save</button>
   </body>
 </html>
