@@ -55,10 +55,13 @@
    */
   Store.prototype.findAll = function (callback) {
     callback = callback || function () {};
-    chrome.storage.local.get(this._dbName, function(storage) {
-      var todos = storage[this._dbName] || [];
-      callback.call(this, todos);
-    }.bind(this));
+    
+    return new Promise(r => {
+      chrome.storage.local.get(this._dbName, storage => {
+        var todos = storage[this._dbName] || [];
+        r(todos);
+      });
+    });
   };
 
   /**

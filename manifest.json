@@ -13,7 +13,7 @@
     "default_title" : "Give up FB"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["store.js", "background.js"]
   },
   "permissions": [
     "storage", "webRequest", "webRequestBlocking","http://*/*", "https://*/*"

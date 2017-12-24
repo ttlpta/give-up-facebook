@@ -2,12 +2,9 @@ $(document).ready(function() {
   $('#start').timepicker();
   $('#end').timepicker();
   const store = new Store('give-up-fb');
-  store.findAll(function(data){
-    console.log(data);
-    if(data.startTime && data.endTime) {
-      $('#start').val(data.startTime);
-      $('#end').val(data.endTime);
-    }
+  store.findAll().then(function(timeRange){
+    $('#start').val(timeRange.startTime);
+    $('#end').val(timeRange.endTime);
   });
 
   const validate = function(startTime, endTime){
@@ -47,23 +44,24 @@ $(document).ready(function() {
     },
   }
 
+  const success = {
+    show: function(){
+      $('#success-msg').show();
+    },
+    hide : function(){
+      $('#success-msg').hide();
+    },
+  }
+
   $('#save').click(function(){
     const startTime = $('#start').val();
     const endTime = $('#end').val();
     const result = validate(startTime, endTime);
-    // store.drop(function(){
-    //   store.findAll(function(data){
-    //     console.log(data);
-    //   });
-    // });
     if (result.success) {
       error.hide();
       store.save({ startTime, endTime }, function(data){
-        store.findAll(function(data){
-          console.log(data);
-        });
+        success.show();
       });
-      window.close();
     } else {
       error.show(result.msg);
     }
