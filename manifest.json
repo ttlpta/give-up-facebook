@@ -16,6 +16,6 @@
     "scripts": ["store.js", "background.js"]
   },
   "permissions": [
-    "storage", "webRequest", "webRequestBlocking","http://*/*", "https://*/*"
+    "management", "storage", "webRequest", "webRequestBlocking","http://*/*", "https://*/*"
   ]
 }

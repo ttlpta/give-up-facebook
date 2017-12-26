@@ -27,3 +27,4 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
   },
   {urls: ["<all_urls>"]},
   ["blocking"]);
+
